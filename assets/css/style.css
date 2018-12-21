@@ -1,0 +1,31 @@
+body{
+    font: 15px/1.5 Arial, Helvetica,sans-serif;
+    padding: 0;
+    margin:0;
+    background-color: beige
+}
+.button_1{
+    height:38px;
+    background:rgb(81, 80, 150);
+    padding-left: 20px;
+    padding-right: 20px;
+    border:0;
+    color:white;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.note {
+    font-size: .8em;
+}
