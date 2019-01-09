@@ -98,10 +98,3 @@ function displayIngredients(nutritionix_response){
     $("#ingredients").append(newRow);
     }
 }
-
-
-
-
-
-
-
