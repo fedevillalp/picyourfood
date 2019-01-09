@@ -72,29 +72,31 @@ function callEdamam(nutritionix_input){
 
         $.ajax(settings).then(
             function (nutritionix_response) {
-
               displayIngredients(nutritionix_response);
-
         });      
         
 };
 
 function displayIngredients(nutritionix_response){
   console.log('This is the display Function [Sachiko to display the contents of the nutritionix_response object]:')
-  console.log(nutritionix_response);
+  var food = nutritionix_response;
+  console.log(food.foods[1].food_name);
+  for (i = 0; i < food.foods.length; i++) {
+    console.log(food.foods[i]);
+    console.log(food.foods[i].nf_calories);
+    var newRow = $("<tr>").append(
+      $("<td>").text(food.foods[i].food_name),
+      $("<td>").text(food.foods[i].serving_qty),
+      $("<td>").text(food.foods[i].serving_unit),
+      $("<td>").text(food.foods[i].nf_calories),
+      $("<td>").text(food.foods[i].nf_protein),
+      $("<td>").text(food.foods[i].nf_total_carbohydrate),
+      $("<td>").text(food.foods[i].nf_total_fat),
+    );
+    $("#ingredients").append(newRow);
+    }
 
-  // use nutritionix_response objec to create a table that displays:
-        //     link_to_thumbnail: '',       // thubmnail 
-        //     name: '',                    //name of item
-        //     calories: '',                //total calories:  id: 208 in kcal
-        //     sugar: '',                   //total sugar : id: 269 in grams,
-        //     protein: '',                 //total protein: id: 203 in grams,
-        //     trans_fat: '',               // total transfat : id: 605 in grams,
-        //     vitamin_D: ''                // total vit D : id: 328 in micro grams
-        // }
 
-
-}
 
 
 

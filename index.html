@@ -46,6 +46,7 @@
   <section id="submitButton">
     <div class="container">
       <h1>Enter a link to upload your food's picture</h1>
+      <div id="image-display"></div>
       <form>
         <input type="url" placeholder="https://example.com">
         <button type="submit" class="button_1">Submit</button>
@@ -53,39 +54,19 @@
     </div>
   </section>
 
-
-
-
   <!-- add a table to list ingredients -->
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Ingredients</th>
-        <th scope="col">Cost</th>
-        <th scope="col">Total Cost</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table id="ingredients">
+    <tr id="header">
+        <td scope="col">Ingredients</td>
+        <td scope="col">Serving</td>
+        <td scope="col">Serving Unit</td>
+        <td scope="col">Calories(kcal)</td>
+        <td scope="col">Protein(g)</td>
+        <td scope="col">Carbbonhydrates(g)</td>
+        <td scope="col">Fat(g)</td>
+    </tr>
+    <tr id="body"></tr>
+    </tr>
   </table>
 </body>
 
@@ -97,7 +78,3 @@
 <script src="assets/javascript/logic.js"></script>
 
 </html>
-
-
-<!---PSEUDOCODE -->
-<!---create ids for button and table -->
