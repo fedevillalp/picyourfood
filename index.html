@@ -22,7 +22,8 @@
 
   <!-- link to style.css -->
   <link rel="stylesheet" href="assets/css/style.css">
-
+  <!-- Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Thasadith" rel="stylesheet">
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -31,41 +32,46 @@
 </head>
 
 <body>
-  <h1 id="myHeader">PICyourFOOD</h1>
-
-  <style>
-    #myHeader {
-      background-color: lightblue;
-      color: black;
-      padding: 40px;
-      text-align: center;
-      } 
-    </style>
-
-  <!-- add a submit button -->
-  <section id="submitButton">
-    <div class="container">
-      <h1>Enter a link to upload your food's picture</h1>
-      <!--changed -->
-      <img id="image" src="" alt="No image loaded"/>
-      <!--deleted -->
-      <!--<div id="image-display"></div>-->
-      <form>
-        <input id="inputBox" type="url" placeholder="https://example.com" value="">
-        <button type="submit" class="button_1">Submit</button>
-      </form>
-    </div>
-  </section>
+    <body>
+        <header>
+          <div class="container">
+           <div id="branding">
+              <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ265IIT7dJQEH-gXJ25sCOzfVRKN7-MonkOHnCkp5wGz9cHpB">  
+               <h1><span class="highlight">PICyourFOOD</h1>
+           </div> 
+           <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>   
+           </nav>  
+          </div>
+      </header>
+      <section id="showcase">
+          <div class="container">
+              <h1>Professional Food Recognition</h1>
+              <p>Discover which food items are included in the image uploaded below</p>
+          </div>
+          <div class="container">
+              <!--changed -->
+              <img id="image" src="" alt="No image loaded"/>
+              <form>
+                <input id="inputBox" type="url" placeholder="https://example.com" value="">
+                <button type="submit" class="button_1">Submit</button>
+              </form>
+            </div>
+      </section>
 
   <!-- add a table to list ingredients -->
-  <table id="ingredients">
+  <table id="ingredients" class="table table-bordered">
     <tr id="header">
         <td scope="col">Ingredients</td>
         <td scope="col">Serving</td>
         <td scope="col">Serving Unit</td>
         <td scope="col">Calories(kcal)</td>
         <td scope="col">Protein(g)</td>
-        <td scope="col">Carbbonhydrates(g)</td>
+        <td scope="col">Carbonhydrates(g)</td>
         <td scope="col">Fat(g)</td>
     </tr>
     <tr id="body"></tr>
