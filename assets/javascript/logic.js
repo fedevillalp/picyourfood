@@ -1,7 +1,7 @@
 //by Federico Villalpando 12/19/2018
 const ingredients = [];
 const clarifi_model = 'bd367be194cf45149e75f01d59f77ba7'
-const image_URL = 'https://food.fnr.sndimg.com/content/dam/images/food/unsized/2016/2/16/0/FND_chefs-picks-comfort-madison-poutine_s4x3.jpg'
+//const image_URL = 'https://food.fnr.sndimg.com/content/dam/images/food/unsized/2016/2/16/0/FND_chefs-picks-comfort-madison-poutine_s4x3.jpg'
 var nutritionix_input = [];
 
 // Instantiate a new Clarifai app passing in the API key.
@@ -27,6 +27,12 @@ function format4NutritionixAPI (clarifi_response){
     return nutritionix_input
 }
 
+//by Sachiko put input url by user to image_URL const and display the image
+$("form").on('submit', function(e){
+  e.preventDefault();
+  console.log($("#inputBox").val());
+  $("#image").attr("src", $("#inputBox").val());
+  const image_URL=$("#inputBox").val();
 //use Clarifi.GENERAL_MODEL to access genereric prediction model
 app.models.predict(clarifi_model, image_URL).then(
     
@@ -44,7 +50,7 @@ app.models.predict(clarifi_model, image_URL).then(
     },
 
 );
-
+});
 
 //by Federico Villalpando 12/20
 const nutritionix_app_ID = '91b04efd';
@@ -78,12 +84,8 @@ function callEdamam(nutritionix_input){
 };
 
 function displayIngredients(nutritionix_response){
-  console.log('This is the display Function [Sachiko to display the contents of the nutritionix_response object]:')
   var food = nutritionix_response;
-  console.log(food.foods[1].food_name);
   for (i = 0; i < food.foods.length; i++) {
-    console.log(food.foods[i]);
-    console.log(food.foods[i].nf_calories);
     var newRow = $("<tr>").append(
       $("<td>").text(food.foods[i].food_name),
       $("<td>").text(food.foods[i].serving_qty),
@@ -95,12 +97,4 @@ function displayIngredients(nutritionix_response){
     );
     $("#ingredients").append(newRow);
     }
-
-
-
-
-
-
-
-
-
+}
