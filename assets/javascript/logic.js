@@ -72,9 +72,7 @@ function callEdamam(nutritionix_input){
 
         $.ajax(settings).then(
             function (nutritionix_response) {
-
               displayIngredients(nutritionix_response);
-
         });      
         
 };
@@ -98,18 +96,7 @@ function displayIngredients(nutritionix_response){
     $("#ingredients").append(newRow);
     }
 
-  // use nutritionix_response objec to create a table that displays:
-        //     link_to_thumbnail: '',       // thubmnail 
-        //     name: '',                    //name of item
-        //     calories: '',                //total calories:  id: 208 in kcal
-        //     sugar: '',                   //total sugar : id: 269 in grams,
-        //     protein: '',                 //total protein: id: 203 in grams,
-        //     trans_fat: '',               // total transfat : id: 605 in grams,
-        //     vitamin_D: ''                // total vit D : id: 328 in micro grams
-        // }
 
-
-}
 
 
 
